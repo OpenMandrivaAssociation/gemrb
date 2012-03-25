@@ -11,6 +11,7 @@ License: GPLv2+
 URL: http://gemrb.sourceforge.net/
 
 Source0: http://downloads.sourceforge.net/project/gemrb/GemRB%20Sources/GemRB%200.7.0%20Sources/%{name}-%{version}.tar.gz
+Patch0: gemrb-0.7.0-linkage.patch	
 Requires: SDL
 Requires: openal
 BuildRequires: cmake
@@ -21,6 +22,7 @@ BuildRequires: openal-devel
 BuildRequires: libvorbis-devel
 BuildRequires: libpng-devel
 BuildRequires: python-devel
+BuildRequires: pkgconfig(SDL_ttf)
 
 %description
 GemRB (Game Engine Made with pre-Rendered Background) is a portable
@@ -37,6 +39,7 @@ http://gemrb.sourceforge.net/wiki/doku.php?id=getting_started
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb'
@@ -52,6 +55,7 @@ rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 %doc AUTHORS COPYING NEWS README INSTALL
 %attr(755,root,root) %{_bindir}/gemrb
 %attr(755,root,root) %{_libdir}/gemrb/libgemrb_core.so
+%attr(755,root,root) %{_libdir}/gemrb/plugins/TTFImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/2DAImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/ACMReader.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/AREImporter.so
