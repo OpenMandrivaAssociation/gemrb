@@ -2,10 +2,6 @@
 %define version  0.7.0
 %define release  1
 
-#%define _disable_ld_no_undefined 1
-#%define dont_check_elf_files 1
-#%define _cmake_skip_rpath %{nil}
-
 Name: %{name}
 Version: %{version}
 Release: %{release}
