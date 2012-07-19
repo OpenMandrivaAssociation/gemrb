@@ -1,5 +1,5 @@
 %define name     gemrb
-%define version  0.7.0
+%define version  0.7.1
 %define release  1
 
 Name: %{name}
@@ -55,6 +55,7 @@ rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 %doc AUTHORS COPYING NEWS README INSTALL
 %attr(755,root,root) %{_bindir}/gemrb
 %attr(755,root,root) %{_libdir}/gemrb/libgemrb_core.so
+%attr(755,root,root) %{_libdir}/gemrb/plugins/NullSource.so 
 %attr(755,root,root) %{_libdir}/gemrb/plugins/TTFImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/2DAImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/ACMReader.so
