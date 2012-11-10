@@ -1,0 +1,10 @@
+--- gemrb/core/CMakeLists.txt.link	2012-01-27 10:14:14.000000000 +0100
++++ gemrb/core/CMakeLists.txt	2012-01-27 10:14:32.000000000 +0100
+@@ -127,6 +127,7 @@
+ 	ADD_LIBRARY(gemrb_core STATIC ${gemrb_core_LIB_SRCS})
+ else (STATIC_LINK)
+ 	ADD_LIBRARY(gemrb_core SHARED ${gemrb_core_LIB_SRCS})
++	target_link_libraries(gemrb_core dl)
+ 	IF(WIN32)
+ 	  INSTALL(TARGETS gemrb_core RUNTIME DESTINATION ${LIB_DIR})
+ 	ELSE(WIN32)
