@@ -1,28 +1,22 @@
-%define name     gemrb
-%define version  0.7.1
-%define release  1
-
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Summary: Port of the original Infinity (Game) Engine
-Group: Games/Adventure
-License: GPLv2+
-URL: http://gemrb.sourceforge.net/
-
-Source0: http://downloads.sourceforge.net/project/gemrb/GemRB%20Sources/GemRB%200.7.0%20Sources/%{name}-%{version}.tar.gz
-Patch0: gemrb-0.7.0-linkage.patch	
-Requires: SDL
-Requires: openal
-BuildRequires: cmake
-BuildRequires: zlib-devel
-BuildRequires: SDL-devel
-BuildRequires: libSDL_mixer-devel
-BuildRequires: openal-devel
-BuildRequires: libvorbis-devel
-BuildRequires: libpng-devel
-BuildRequires: python-devel
-BuildRequires: pkgconfig(SDL_ttf)
+Name:		gemrb
+Version:	0.7.1
+Release:	1
+Summary:	Port of the original Infinity (Game) Engine
+Group:		Games/Adventure
+License:	GPLv2+
+URL:		http://gemrb.sourceforge.net/
+Source0:	http://downloads.sourceforge.net/project/gemrb/GemRB%20Sources/GemRB%200.7.0%20Sources/%{name}-%{version}.tar.gz
+Patch0:		gemrb-0.7.0-linkage.patch
+BuildRequires:	cmake
+BuildRequires:	zlib-devel
+BuildRequires:	pkgconfig(sdl)
+BuildRequires:	pkgconfig(SDL_mixer)
+BuildRequires:	pkgconfig(SDL_ttf)
+BuildRequires:	pkgconfig(openal)
+BuildRequires:	pkgconfig(vorbis)
+BuildRequires:	pkgconfig(libpng)
+BuildRequires:	python-devel
+Requires:	openal
 
 %description
 GemRB (Game Engine Made with pre-Rendered Background) is a portable
@@ -30,7 +24,7 @@ open-source implementation of Bioware's Infinity Engine.
 
 It was written to support pseudo-3D role playing games based on the
 Dungeons & Dragons ruleset (Baldur's Gate and Icewind Dale series,
-Planescape: Torment). 
+Planescape: Torment).
 
 This is not a game, but the engine. You need data installed somewhere, and
 point gemrb the the relevant directory. More details and a list of
@@ -55,7 +49,7 @@ rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 %doc AUTHORS COPYING NEWS README INSTALL
 %attr(755,root,root) %{_bindir}/gemrb
 %attr(755,root,root) %{_libdir}/gemrb/libgemrb_core.so
-%attr(755,root,root) %{_libdir}/gemrb/plugins/NullSource.so 
+%attr(755,root,root) %{_libdir}/gemrb/plugins/NullSource.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/TTFImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/2DAImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/ACMReader.so
@@ -104,9 +98,18 @@ rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 %{_mandir}/man6/gemrb.6.*
 %{_datadir}/gemrb/*
 %{_datadir}/applications/gemrb.desktop
-%{_datadir}/icons/hicolor/scalable/apps/gemrb.svg
+%{_iconsdir}/hicolor/scalable/apps/gemrb.svg
 %{_datadir}/pixmaps/gemrb.png
 %{_bindir}/extend2da.py
 
-### Exclude files - is there any ?
-#% exclude %{_sysconfdir}/gemrb/GemRB.cfg.noinstall.sample
+%changelog
+* Thu Jul 19 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.7.1-1
++ Revision: 810183
+- version update 0.7.1
+
+* Mon Mar 26 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.7.0-1
++ Revision: 786803
+- broken ldl lib fix
+- removed unneeded defines
+- imported package gemrb
+
