@@ -1,5 +1,5 @@
 Name:		gemrb
-Version:	0.7.1
+Version:	0.7.2
 Release:	1
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
@@ -33,7 +33,7 @@ http://gemrb.sourceforge.net/wiki/doku.php?id=getting_started
 
 %prep
 %setup -q
-%patch0 -p0
+#% patch0 -p0
 
 %build
 %cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb'
@@ -101,15 +101,3 @@ rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 %{_iconsdir}/hicolor/scalable/apps/gemrb.svg
 %{_datadir}/pixmaps/gemrb.png
 %{_bindir}/extend2da.py
-
-%changelog
-* Thu Jul 19 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.7.1-1
-+ Revision: 810183
-- version update 0.7.1
-
-* Mon Mar 26 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.7.0-1
-+ Revision: 786803
-- broken ldl lib fix
-- removed unneeded defines
-- imported package gemrb
-
