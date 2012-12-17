@@ -6,7 +6,6 @@ Group:		Games/Adventure
 License:	GPLv2+
 URL:		http://gemrb.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/gemrb/GemRB%20Sources/GemRB%200.7.0%20Sources/%{name}-%{version}.tar.gz
-Patch0:		gemrb-0.7.0-linkage.patch
 BuildRequires:	cmake
 BuildRequires:	zlib-devel
 BuildRequires:	pkgconfig(sdl)
