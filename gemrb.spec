@@ -17,7 +17,7 @@ BuildRequires:	pkgconfig(SDL_ttf)
 BuildRequires:	pkgconfig(openal)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(libpng)
-BuildRequires:	python-devel
+BuildRequires:	pkgconfig(python2)
 Requires:	openal
 
 %description
