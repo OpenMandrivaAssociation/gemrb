@@ -1,11 +1,14 @@
+%define libname %mklibname gemrb_core 0
+%define devname	%mklibname -d gemrb_core
+
 Name:		gemrb
-Version:	0.8.0.1
-Release:	2
+Version:	0.8.4
+Release:	1
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
 License:	GPLv2+
 URL:		http://gemrb.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/project/gemrb/GemRB%20Sources/GemRB%200.7.0%20Sources/%{name}-%{version}.tar.gz
+Source0:	https://github.com/gemrb/gemrb/archive/v%{version}.tar.gz
 BuildRequires:	cmake
 BuildRequires:	zlib-devel
 BuildRequires:	pkgconfig(sdl)
@@ -30,9 +33,24 @@ point gemrb the the relevant directory. More details and a list of
 supported games can be found at
 http://gemrb.sourceforge.net/wiki/doku.php?id=getting_started
 
+%package -n	%{libname}
+Summary:	Library for %{name}
+Group:		System/Libraries
+
+%description -n	%{libname}
+%{summary}
+
+%package -n	%{devname}
+Summary:	Development files for %{name}
+Group:		Development/C
+Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
+
+%description -n	%{devname}
+This package includes the development files for %{name}.
+
 %prep
 %setup -q
-#% patch0 -p0
 
 %build
 %cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb'
@@ -43,11 +61,21 @@ http://gemrb.sourceforge.net/wiki/doku.php?id=getting_started
 
 rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 
+# remove zero-length files
+find %{buildroot} -type f -empty -delete
+mv %{buildroot}/etc/gemrb/GemRB.cfg.sample %{buildroot}/etc/gemrb/GemRB.cfg
+chmod +x %{buildroot}%{_bindir}/extend2da.py
+
+%files -n %{libname}
+%{_libdir}/gemrb/libgemrb_core.so.*
+
+%files -n %{devname}
+%{_libdir}/gemrb/libgemrb_core.so
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING NEWS README INSTALL
 %attr(755,root,root) %{_bindir}/gemrb
-%attr(755,root,root) %{_libdir}/gemrb/libgemrb_core.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/NullSource.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/TTFImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/2DAImporter.so
@@ -93,7 +121,7 @@ rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 %attr(755,root,root) %{_libdir}/gemrb/plugins/ZLibManager.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/SAVImporter.so
 
-%{_sysconfdir}/gemrb/GemRB.cfg.sample
+%config(noreplace) %{_sysconfdir}/gemrb/GemRB.cfg
 %{_mandir}/man6/gemrb.6.*
 %{_datadir}/gemrb/*
 %{_datadir}/applications/gemrb.desktop
