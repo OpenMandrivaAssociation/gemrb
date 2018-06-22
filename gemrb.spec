@@ -2,7 +2,7 @@
 %define devname	%mklibname -d gemrb_core
 
 Name:		gemrb
-Version:	0.8.4
+Version:	0.8.5
 Release:	1
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
