@@ -2,7 +2,7 @@
 %define devname	%mklibname -d gemrb_core
 
 Name:		gemrb
-Version:	0.8.4
+Version:	0.8.5
 Release:	1
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
@@ -65,6 +65,7 @@ rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 find %{buildroot} -type f -empty -delete
 mv %{buildroot}/etc/gemrb/GemRB.cfg.sample %{buildroot}/etc/gemrb/GemRB.cfg
 chmod +x %{buildroot}%{_bindir}/extend2da.py
+rm -rf %{buildroot}%{_datadir}/doc/gemrb/en/
 
 %files -n %{libname}
 %{_libdir}/gemrb/libgemrb_core.so.*
