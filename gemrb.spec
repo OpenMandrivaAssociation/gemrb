@@ -3,21 +3,24 @@
 
 Name:		gemrb
 Version:	0.8.5
-Release:	1
+Release:	2
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
 License:	GPLv2+
 URL:		http://gemrb.sourceforge.net/
 Source0:	https://github.com/gemrb/gemrb/archive/v%{version}.tar.gz
 BuildRequires:	cmake
-BuildRequires:	zlib-devel
-BuildRequires:	pkgconfig(sdl)
-BuildRequires:	pkgconfig(SDL_mixer)
-BuildRequires:	pkgconfig(SDL_ttf)
+BuildRequires:  pkgconfig(gl)
+BuildRequires:  pkgconfig(glew)
+BuildRequires:  pkgconfig(zlib)
+BuildRequires:  pkgconfig(sdl2)
+BuildRequires:  pkgconfig(SDL2_mixer)
+BuildRequires:  pkgconfig(SDL2_ttf)
 BuildRequires:	pkgconfig(openal)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(python2)
+BuildRequires:  pkgconfig(libvlc)
 Requires:	openal
 
 %description
@@ -53,11 +56,11 @@ This package includes the development files for %{name}.
 %setup -q
 
 %build
-%cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb'
-%make
+%cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb' -DSDL_BACKEND=SDL2 -DOPENGL_BACKEND=OpenGL
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 
