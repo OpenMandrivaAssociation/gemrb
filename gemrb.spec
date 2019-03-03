@@ -113,8 +113,8 @@ rm -rf %{buildroot}%{_datadir}/doc/gemrb/en/
 %attr(755,root,root) %{_libdir}/gemrb/plugins/PNGImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/PROImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/PSTOpcodes.so
-%attr(755,root,root) %{_libdir}/gemrb/plugins/SDLAudio.so
-%attr(755,root,root) %{_libdir}/gemrb/plugins/SDLVideo.so
+#attr(755,root,root) %{_libdir}/gemrb/plugins/SDLAudio.so
+#attr(755,root,root) %{_libdir}/gemrb/plugins/SDLVideo.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/SPLImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/STOImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/TISImporter.so
