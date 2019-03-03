@@ -78,7 +78,7 @@ rm -rf %{buildroot}%{_datadir}/doc/gemrb/en/
 %doc AUTHORS COPYING NEWS README INSTALL
 %attr(755,root,root) %{_bindir}/gemrb
 %attr(755,root,root) %{_libdir}/gemrb/plugins/NullSource.so
-%attr(755,root,root) %{_libdir}/gemrb/plugins/TTFImporter.so
+#attr(755,root,root) %{_libdir}/gemrb/plugins/TTFImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/2DAImporter.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/ACMReader.so
 %attr(755,root,root) %{_libdir}/gemrb/plugins/AREImporter.so
