@@ -78,7 +78,7 @@ rm -rf %{buildroot}%{_datadir}/doc/gemrb/en/
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING NEWS README INSTALL
+%doc AUTHORS COPYING NEWS README.md INSTALL
 %attr(755,root,root) %{_bindir}/gemrb
 %{_libdir}/%{name}/plugins/
 
