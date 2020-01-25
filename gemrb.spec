@@ -2,13 +2,13 @@
 %define devname	%mklibname -d gemrb_core
 
 Name:		gemrb
-Version:	0.8.5
-Release:	2
+Version:	0.8.6
+Release:	1
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
 License:	GPLv2+
 URL:		http://gemrb.sourceforge.net/
-Source0:	https://github.com/gemrb/gemrb/archive/v%{version}.tar.gz
+Source0:	https://github.com/gemrb/gemrb/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	cmake
 BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(glew)
