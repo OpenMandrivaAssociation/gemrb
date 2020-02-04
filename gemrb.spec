@@ -1,3 +1,5 @@
+%global dont_remove_rpath 1
+
 %define libname %mklibname gemrb_core 0
 %define devname	%mklibname -d gemrb_core
 
@@ -10,6 +12,7 @@ License:	GPLv2+
 URL:		http://gemrb.sourceforge.net/
 Source0:	https://github.com/gemrb/gemrb/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	cmake
+BuildRequires:	ninja
 BuildRequires:  pkgconfig(gl)
 BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(zlib)
@@ -56,11 +59,12 @@ This package includes the development files for %{name}.
 %setup -q
 
 %build
-%cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb' -DSDL_BACKEND=SDL2 -DOPENGL_BACKEND=OpenGL
-%make_build
+%cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb' -DSDL_BACKEND=SDL2 -DOPENGL_BACKEND=OpenGL \
+	-DCMAKE_SKIP_RPATH:BOOL=OFF -DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF -G Ninja
+%ninja_build
 
 %install
-%make_install -C build
+%ninja_install -C build
 
 rm -f %{buildroot}/etc/gemrb/GemRB.cfg.noinstall.sample
 
