@@ -24,6 +24,8 @@ BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(python2)
 BuildRequires:  pkgconfig(libvlc)
+BuildRequires:  pkgconfig(freetype2)
+
 Requires:	openal
 
 %description
