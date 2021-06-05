@@ -97,3 +97,4 @@ rm -rf %{buildroot}%{_datadir}/doc/gemrb/en/
 %{_iconsdir}/hicolor/scalable/apps/gemrb.svg
 %{_datadir}/pixmaps/gemrb.png
 %{_bindir}/extend2da.py
+%{_datadir}/metainfo/org.gemrb.gemrb.metainfo.xml
