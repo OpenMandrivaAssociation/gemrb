@@ -3,6 +3,8 @@
 %define libname %mklibname gemrb_core 0
 %define devname	%mklibname -d gemrb_core
 
+%global optflags %{optflags} -pthread
+
 Name:		gemrb
 Version:	0.8.8
 Release:	1
