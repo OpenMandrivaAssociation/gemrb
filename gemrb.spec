@@ -66,7 +66,7 @@ This package includes the development files for %{name}.
 
 %build
 %cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb' -DSDL_BACKEND=SDL2 -DOPENGL_BACKEND=OpenGL \
-	-DCMAKE_SKIP_RPATH:BOOL=OFF -DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF -G Ninja
+	-DCMAKE_SKIP_RPATH:BOOL=OFF -DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF -DDISABLE_WERROR=1 -G Ninja
 %ninja_build
 
 %install
