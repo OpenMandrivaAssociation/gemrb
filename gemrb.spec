@@ -5,9 +5,11 @@
 
 %global optflags %{optflags} -pthread
 
+%define git 20220702
+
 Name:		gemrb
 Version:	0.9.0
-Release:	1
+Release:	1.%{git}.0
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
 License:	GPLv2+
