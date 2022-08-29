@@ -24,7 +24,7 @@ BuildRequires:  pkgconfig(SDL2_ttf)
 BuildRequires:	pkgconfig(openal)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(libpng)
-BuildRequires:	pkgconfig(python2)
+BuildRequires:	pkgconfig(python)
 BuildRequires:  pkgconfig(libvlc)
 BuildRequires:  pkgconfig(freetype2)
 
