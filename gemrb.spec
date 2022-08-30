@@ -13,6 +13,7 @@ Group:		Games/Adventure
 License:	GPLv2+
 URL:		http://gemrb.sourceforge.net/
 Source0:	https://github.com/gemrb/gemrb/archive/v%{version}/%{name}-%{version}.tar.gz
+Patch0:		gemrb-0.9.1-SDL-linkage.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:  pkgconfig(gl)
@@ -60,7 +61,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package includes the development files for %{name}.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %cmake -DLAYOUT=fhs -DLIB_DIR='%{_libdir}/gemrb' -DSDL_BACKEND=SDL2 -DOPENGL_BACKEND=OpenGL \
