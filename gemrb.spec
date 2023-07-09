@@ -13,7 +13,7 @@ Group:		Games/Adventure
 License:	GPLv2+
 URL:		http://gemrb.sourceforge.net/
 Source0:	https://github.com/gemrb/gemrb/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch0:		gemrb-0.9.1-SDL-linkage.patch
+#Patch0:		gemrb-0.9.1-SDL-linkage.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:  pkgconfig(gl)
