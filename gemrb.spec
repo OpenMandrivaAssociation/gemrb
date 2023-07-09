@@ -6,7 +6,7 @@
 %global optflags %{optflags} -pthread
 
 Name:		gemrb
-Version:	0.9.1.1
+Version:	0.9.2
 Release:	1
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
