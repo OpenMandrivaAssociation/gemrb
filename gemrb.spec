@@ -1,3 +1,4 @@
+%undefine _debugsource_packages
 %global dont_remove_rpath 1
 
 %define libname %mklibname gemrb_core 0
