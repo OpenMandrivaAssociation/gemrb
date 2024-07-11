@@ -6,12 +6,12 @@
 %global optflags %{optflags} -pthread
 
 Name:		gemrb
-Version:	0.9.2
+Version:	0.9.3
 Release:	1
 Summary:	Port of the original Infinity (Game) Engine
 Group:		Games/Adventure
 License:	GPLv2+
-URL:		http://gemrb.sourceforge.net/
+URL:		https://gemrb.sourceforge.net/
 Source0:	https://github.com/gemrb/gemrb/archive/v%{version}/%{name}-%{version}.tar.gz
 #Patch0:		gemrb-0.9.1-SDL-linkage.patch
 BuildRequires:	cmake
