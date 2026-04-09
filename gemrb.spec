@@ -95,8 +95,8 @@ rm -rf %{buildroot}%{_datadir}/doc/gemrb/en/
 %config(noreplace) %{_sysconfdir}/gemrb/GemRB.cfg
 %{_mandir}/man6/gemrb.6.*
 %{_datadir}/gemrb/*
-%{_datadir}/applications/gemrb.desktop
-%{_iconsdir}/hicolor/scalable/apps/gemrb.svg
-%{_datadir}/pixmaps/gemrb.png
+%{_datadir}/applications/org.gemrb.gemrb.desktop
+%{_iconsdir}/hicolor/scalable/apps/org.gemrb.gemrb.svg
+%{_datadir}/pixmaps/org.gemrb.gemrb.png
 %{_bindir}/extend2da.py
 %{_datadir}/metainfo/org.gemrb.gemrb.metainfo.xml
